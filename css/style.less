@@ -4,11 +4,15 @@
 @menu_height: 45px;
 @sidebar_width: 175px;
 @page_width: 980px;
+@game_item_head_heigth: 20px;
+@game_item_height: 240px;
+@game_item_width: 180px;
 .center-block {
     width: @page_width;
     min-width: @page_width;
     margin: 0 auto;
 }
+
 
 html, body {margin:0;padding:0;width:100%;height:100%; font-family: 'Play', sans-serif;}
 #container {
@@ -156,10 +160,19 @@ body {
 
 .complete-block {
     margin-top: 10px;
+
 }
 .top-games {
     width: @page_width - @sidebar_width - 15px;
     margin: 10px auto;
+}
+
+.popular-games {
+
+}
+
+.popular-games .block-content {
+    height: 500px;
 }
 
 .main-menu li {
@@ -185,4 +198,78 @@ body {
     &:hover {
         text-shadow: 0px 0px 6px rgba(255,255,255,0.9);
     }
+}
+/* =========================================== Форма поиска в главном меню ========================================== */
+.search-bar {
+    float: right;
+    height: @menu_height;
+}
+
+.search-bar fieldset {
+    margin-top: 7px;
+    margin-right: 7px;
+    height: 25px;
+    width: 155px;
+    border-radius: 10px;
+    border-width: 4px;
+    border-image-source: url("/img/block-white.png");
+    border-image-slice: 4 fill;
+    border-width: 4px;
+    -moz-border-image: url("/img/block-white.png") 4 repeat;
+    -webkit-border-image: url("/img/block-white.png") 4 repeat;
+    -o-border-image: url("/img/block-white.png") 4 repeat;
+}
+
+.search-bar input {
+    border: 0;
+    padding: 0 !important;
+    margin: 0 !important;
+    height: 25px;
+    font-size: 14px;
+}
+
+.search-bar .search-input{
+    width: 120px;
+    padding: 0 0 0 5px ;
+}
+
+.search-bar .btn-search {
+    width: 25px;
+    background-color: #ffffff;
+    background: url("/img/find-icon.png") no-repeat;
+    text-indent: -9999px;
+    background-position: 2px;
+
+    &:hover {
+        opacity: 0.7;
+        cursor: pointer;
+    }
+
+    &:active {
+        background-size: 20px 20px;
+        background-position: 3px 3px;
+    }
+}
+/* ----------------------------------- Форма поиска в главном меню -------------------------------------------------- */
+.game-item {
+    width: @game_item_width;
+    height: @game_item_height;
+    float: left;
+}
+
+.head-orange {
+    height: @game_item_head_heigth;
+    border-radius: 10px;
+    border-width: 4px;
+    border-image-source: url("/img/block-orange.png");
+    border-image-slice: 4 fill;
+    border-width: 4px;
+    -moz-border-image: url("/img/block-orange.png") 4 repeat;
+    -webkit-border-image: url("/img/block-orange.png") 4 repeat;
+    -o-border-image: url("/img/block-orange.png") 4 repeat;
+}
+.item-content {
+    height: @game_item_height - @game_item_head_heigth - 10px;
+    margin-top: -2px;
+    border: 2px solid #482400;
 }
