@@ -5,8 +5,13 @@
 @sidebar_width: 175px;
 @page_width: 980px;
 @game_item_head_heigth: 20px;
-@game_item_height: 240px;
+@game_item_height: 260px;
 @game_item_width: 180px;
+@game_item_description_height: 65px;
+.content-block {
+    margin: 10px auto;
+    width: @page_width - @sidebar_width - 15px;
+}
 .center-block {
     width: @page_width;
     min-width: @page_width;
@@ -160,20 +165,21 @@ body {
 
 .complete-block {
     margin-top: 10px;
+    margin-bottom: 10px;
 
 }
 .top-games {
-    width: @page_width - @sidebar_width - 15px;
-    margin: 10px auto;
+    .content-block;
 }
 
 .popular-games {
-
+    .content-block;
 }
 
-.popular-games .block-content {
-    height: 500px;
+.random-games {
+    .content-block;
 }
+
 
 .main-menu li {
     vertical-align: middle;
@@ -254,7 +260,39 @@ body {
 .game-item {
     width: @game_item_width;
     height: @game_item_height;
-    float: left;
+    border-radius: 10px 10px 0 0;
+    opacity: 0.9;
+
+    h3 {
+        font-size: 12px;
+        line-height: 20px;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        white-space: nowrap;
+        color: white;
+        a {
+            text-decoration: none;
+            color: #ffffff;
+            &:hover {
+                text-shadow: 0px 0px 6px rgba(255,255,255,0.8);
+            }
+            &:active {
+                text-shadow: 0px 0px 6px rgba(255,255,255,0.1);
+            }
+        }
+        &:hover {
+            text-shadow: 0px 0px 6px rgba(255,255,255,0.8);
+        }
+        &:active {
+            text-shadow: 0px 0px 6px rgba(255,255,255,0.1);
+        }
+    }
+
+    &:hover {
+        opacity: 1;
+        -webkit-box-shadow: 0px 0px 2px 2px rgba(00, 00, 00, 0.4);
+        box-shadow: 0px 0px 2px 2px rgba(00, 00, 00, 0.2);
+    }
 }
 
 .head-orange {
@@ -272,4 +310,54 @@ body {
     height: @game_item_height - @game_item_head_heigth - 10px;
     margin-top: -2px;
     border: 2px solid #482400;
+}
+
+.item-image {
+    max-width: @game_item_width;
+    height: 120px;
+    overflow: hidden;
+}
+
+.item-decription {
+    height: @game_item_description_height;
+    line-height: 1.5em;
+    width: @game_item_width - (4 * 2) - 5px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    font-size: 10px;
+    padding: 10px 5px;
+}
+
+.item-genre {
+    float: left;
+    font-size: 12px;
+    padding: 3px;
+    margin-top: 2px;
+    color: #482400;
+    a {
+        @lnk_color: #1073ae;
+        color: @lnk_color;
+        &:hover {
+            color: lighten(@lnk_color, 30%);
+        }
+    }
+}
+.item-info {
+    padding: 3px 0;
+}
+
+.item-rating {
+    padding: 3px 3px 3px 15px;
+    background: url("/img/heart.png") no-repeat left;
+    background-size: 10px 9px;
+    float: right;
+    font-size: 12px;
+    margin-top: 2px;
+    color: #205917;
+}
+
+.game-grid {
+    td {
+        padding: 7px;
+    }
 }
