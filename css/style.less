@@ -1,0 +1,157 @@
+
+/* Разметка страници index*/
+@fill_block_color: #ffffff;
+
+@sidebar_width: 175px;
+@page_width: 980px;
+.center-block {
+    width: @page_width;
+    min-width: @page_width;
+    margin: 0 auto;
+}
+
+html, body {margin:0;padding:0;width:100%;height:100%;}
+#container {
+    position:relative;
+    min-height:100%;
+    height:auto !important;
+    height:100%;
+    color: #646464;
+    text-align: justify;
+}
+
+#container #header {
+    height: 195px;
+    width: 100%;
+    background-color: #00262f;
+
+}
+
+#header #wide-header {
+    background-image: url("/img/header.png");
+    background-repeat: no-repeat;
+    background-position: center;
+    width: 100%;
+    height: 100%;
+    min-width: @page_width;
+
+}
+
+#header #fixed-header {
+    height: 100%;
+    .center-block;
+    color: #ffffff;
+}
+
+#container #menu {
+    height: 45px;
+    background: #bcbcbc; /* Old browsers */
+    background: -moz-linear-gradient(top,  #bcbcbc 0%, #bababa 29%, #b4b4b4 43%, #b2b2b2 44%, #b1b1b1 47%, #a9a9a9 56%, #a3a3a3 72%, #a2a2a2 100%); /* FF3.6+ */
+    background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#bcbcbc), color-stop(29%,#bababa), color-stop(43%,#b4b4b4), color-stop(44%,#b2b2b2), color-stop(47%,#b1b1b1), color-stop(56%,#a9a9a9), color-stop(72%,#a3a3a3), color-stop(100%,#a2a2a2)); /* Chrome,Safari4+ */
+    background: -webkit-linear-gradient(top,  #bcbcbc 0%,#bababa 29%,#b4b4b4 43%,#b2b2b2 44%,#b1b1b1 47%,#a9a9a9 56%,#a3a3a3 72%,#a2a2a2 100%); /* Chrome10+,Safari5.1+ */
+    background: -o-linear-gradient(top,  #bcbcbc 0%,#bababa 29%,#b4b4b4 43%,#b2b2b2 44%,#b1b1b1 47%,#a9a9a9 56%,#a3a3a3 72%,#a2a2a2 100%); /* Opera 11.10+ */
+    background: -ms-linear-gradient(top,  #bcbcbc 0%,#bababa 29%,#b4b4b4 43%,#b2b2b2 44%,#b1b1b1 47%,#a9a9a9 56%,#a3a3a3 72%,#a2a2a2 100%); /* IE10+ */
+    background: linear-gradient(top,  #bcbcbc 0%,#bababa 29%,#b4b4b4 43%,#b2b2b2 44%,#b1b1b1 47%,#a9a9a9 56%,#a3a3a3 72%,#a2a2a2 100%); /* W3C */
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#bcbcbc', endColorstr='#a2a2a2',GradientType=0 ); /* IE6-9 */
+
+    border: 2px solid #000000;
+}
+
+#menu #fixed-menu {
+    .center-block;
+    height: 100%;
+}
+
+#container .empty {
+    height:100px;
+    float: left;
+    width: 100%;
+}
+
+#container #content {
+    width: 100%;
+    height: 100%;
+}
+
+.genre-menu {
+    margin: 0 auto;
+    width: @sidebar_width - 10px;
+}
+
+#sidebar-left {
+    width: @sidebar_width;
+    float: left;
+}
+
+body {
+    background-image: url("/img/bit-tile-blue.png");
+}
+
+#content #fixed-content {
+    .center-block;
+    height: 100%;
+}
+
+#footer {
+    position:relative;
+    margin-top:-100px;
+    height:100px;
+    clear: both;
+    float: left;
+    width:100%;
+    background-image: url("/img/footer.png");
+}
+
+#fixed-footer {
+    color: #ffffff;
+    text-align: center;
+    padding: 10px;
+}
+
+#main-content {
+    float: left;
+    width: @page_width - @sidebar_width;
+}
+
+.bit-button {
+    border-width: 4px;
+    border-image-source: url("/img/button-green-2.png");
+    border-image-slice: 4 fill;
+    -moz-border-image: url("/img/button-green-2.png") 4 repeat;
+    -webkit-border-image: url("/img/button-green-2.png") 4 repeat;
+    -o-border-image: url("/img/button-green-2.png") 4 repeat;
+    border-radius: 15px;
+
+    padding: 5px;
+    display: inline-block;
+    color: #ffffff;
+}
+
+.block-head-blue {
+    border-width: 4px;
+    border-image-source: url("/img/block-head.png");
+    border-image-slice: 4 fill;
+    -moz-border-image: url("/img/block-head.png") 4 repeat;
+    -webkit-border-image: url("/img/block-head.png") 4 repeat;
+    -o-border-image: url("/img/block-head.png") 4 repeat;
+    padding: 5px;
+    border-radius: 15px;
+
+    color: #ffffff;
+}
+
+.block-content {
+    margin-top: -2px;
+    padding: 5px;
+    border: 2px solid #000000;
+    background-color: @fill_block_color;
+    min-height: 50px;
+}
+
+.complete-block {
+    margin-top: 10px;
+}
+.top-games {
+    width: @page_width - @sidebar_width - 15px;
+    margin: 10px auto;
+}
