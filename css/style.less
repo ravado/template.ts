@@ -180,8 +180,11 @@ body {
     .content-block;
 }
 
+#main-menu {
+    float: left;
+}
 
-.main-menu li {
+#main-menu li {
     vertical-align: middle;
     background-image: url("/img/menu-divide.png");
     background-position: left;
@@ -190,20 +193,118 @@ body {
     padding-left: 10px;
     padding-right: 10px;
     float: left;
-    height: @menu_height;
+    position: relative;
+    display: block;
+    border-bottom: 5px solid transparent;
+    border-top: 5px solid transparent;
+    height: @menu_height - 10px;
+    a {
+        text-decoration: none;
+        color: #ffffff;
+        display: block;
+        padding: 5px 0 10px 0;
+        &:hover{
+            text-shadow: 0px 0px 6px rgba(255,255,255,0.9);
+        }
+    }
+    &:hover {
+        border-bottom: 5px solid #333;
+        border-top: 5px solid #333;
+    }
     &:first-child {
         background-image: none;
     }
 }
 
-.main-menu li a {
-    text-decoration: none;
-    color: #ffffff;
-    display: block;
-    padding: 10px 0 10px 0;
-    &:hover {
-        text-shadow: 0px 0px 6px rgba(255,255,255,0.9);
+
+/*--- ВЫПАДАЮЩИЕ ПУНКТЫ ---*/
+#main-menu ul{
+    list-style:none;
+    position:absolute;
+    left:-9999px; /* Скрываем за экраном, когда не нужно (данный метод лучше, чем display:none;) */
+    opacity:0; /* Устанавливаем начальное состояние прозрачности */
+    z-index: 1;
+    div.submenu-content {
+        border-width: 4px;
+        border-image-source: url("/img/block-white.png");
+        border-image-slice: 4 fill;
+        border-width: 4px;
+        position: relative;
+        z-index: 0;
+        margin-top: -2px;
+        -moz-border-image: url("/img/block-white.png") 4 repeat;
+        -webkit-border-image: url("/img/block-white.png") 4 repeat;
+        -o-border-image: url("/img/block-white.png") 4 repeat;
     }
+    div.menu-triangle {
+        z-index: 1;
+        position: relative;
+        height: 15px;
+        &:before{
+            content: "";
+            position: absolute;
+            z-index: 1000;
+            bottom: 1px;
+            left: 20%;
+            border-bottom: 8px solid #000;
+            border-left: 8px solid transparent;
+            border-right: 8px solid transparent;
+            border-top: 0;
+            border-top-color: #000;
+        }
+        &:after {
+            content: "";
+            position: absolute;
+            z-index: 1000;
+            bottom: -1px;
+            left: 20%;
+            border-bottom: 8px solid #fff;
+            border-left: 8px solid transparent;
+            border-right: 8px solid transparent;
+            border-top: 0;
+        }
+    }
+}
+#main-menu ul li{
+    padding-top:1px; /* Вводим отступ между li чтобы создать иллюзию разделенных пунктов меню */
+    float:none;
+    background-color: #ffffff;
+    height: 25px;
+    min-width: 50px;
+    a {
+        color: #333;
+    }
+}
+#main-menu ul a{
+    white-space:nowrap; /* Останавливаем перенос текста и создаем многострочный выпадающий пункт */
+    font-size: 12px;
+    padding: 0;
+    display:block;
+}
+#main-menu li:hover ul{ /* Выводим выпадающий пункт при наведении курсора */
+    left:0; /* Приносим его обратно на экран, когда нужно */
+    opacity:1; /* Делаем непрозрачным */
+
+}
+#main-menu li:hover{ /* Устанавливаем стили для верхнего уровня, когда выводится выпадающий список */
+//    background: #333;
+
+    li {
+        background: #ffffff;
+        border: 0;
+    }
+}
+#main-menu li:hover ul a{ /* Изменяем некоторые стили верхнего уровня при выводе выпадающего пункта */
+    -webkit-transition:-webkit-transform 0.075s linear;
+}
+#main-menu li:hover ul li:hover{ /* Устанавливаем стили для выпадающих пунктов, когда курсор наводится на конкретный пункт */
+    a {
+        color: #ffffff;
+    }
+    border: 0;
+    background:#333;
+    background:rgba(51,51,51,1); /* Будет полупрозрачным */
+
 }
 /* =========================================== Форма поиска в главном меню ========================================== */
 .search-bar {
@@ -354,6 +455,7 @@ body {
     font-size: 12px;
     margin-top: 2px;
     color: #205917;
+    cursor: help;
 }
 
 .game-grid {
