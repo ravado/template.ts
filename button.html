@@ -4,14 +4,58 @@
 <head>
     <title></title>
     <link rel="stylesheet/less" href="/css/style.less">
+    <script type="text/javascript" src="/js/jquery.js"></script>
     <script type="text/javascript" src="/js/less.js"></script>
 
+    <script src="http://www.google.com/jsapi" type="text/javascript"></script>
+    <script type="text/javascript">
+        google.load('search', '1', {language : 'ru', style : google.loader.themes.V2_DEFAULT});
+        google.setOnLoadCallback(function() {
+            var customSearchOptions = {};
+            var imageSearchOptions = {};
+            imageSearchOptions['layout'] = google.search.ImageSearch.LAYOUT_POPUP;
+            customSearchOptions['enableImageSearch'] = true;
+            customSearchOptions['imageSearchOptions'] = imageSearchOptions;
+            var customSearchControl = new google.search.CustomSearchControl(
+                    '017974249376903738753:v_aupzl_ryi', customSearchOptions);
+            customSearchControl.setResultSetSize(google.search.Search.FILTERED_CSE_RESULTSET);
+            customSearchControl.draw('all');
+        }, true);
+    </script>
+    <script src="http://www.google.com/jsapi" type="text/javascript"></script>
+    <script type="text/javascript">
+        google.load('search', '1', {language : 'ru', style : google.loader.themes.GREENSKY});
+        google.setOnLoadCallback(function() {
+            var customSearchOptions = {};  var customSearchControl = new google.search.CustomSearchControl(
+                    '017974249376903738753:hixcuhvwd_4', customSearchOptions);
+            customSearchControl.setResultSetSize(google.search.Search.FILTERED_CSE_RESULTSET);
+            customSearchControl.draw('site');
+        }, true);
+    </script>
+
+    <script type="text/javascript">
+        $(document).ready(function() {
+            $("input[name=search]").change(function() {
+                if($(this).val() == 'all') {
+                    $("#all").show();
+                    $("#site").hide();
+                    $(".gsc-input").val();
+                }else if($(this).val() == 'site') {
+                    $("#site").show();
+                    $("#all").hide();
+                }
+            })
+        });
+    </script>
 </head>
 <body>
 <a class="bit-button">Some</a>
 <div class="big-block">
-    <div class="block-head-blue">sd</div>
-    <div class="block-content">Это свойство определяет внутреннее смещение от верхнего, правого, нижнего и левого краев изображения, разделив его на девять областей: четыре угла, четыре края и середину. Средняя часть изображения отбрасывается (рассматривается как полностью прозрачное), если ключевое слово fill присутствует. Если четвертое число / процент опущено, то оно такое же, как и второе. Если третье тоже опущено, то оно такое же, как и первое. Если второе также опущено, то оно такое же, как и первое.</div>
+    <input type="radio" name="search" value="all" checked>по всему интернету
+    <input type="radio" name="search" value="site">по сайту
+    <div id="all" style="width: 100%;">Loading</div>
+    <div id="site" style="width: 100%; display: none;">Loading</div>
+
 </div>
 </body>
 </html>
