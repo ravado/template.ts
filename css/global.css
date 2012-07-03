@@ -42,8 +42,8 @@ body {
 
 #ribbon {
 	position:absolute;
-	top:9px;
-	left:0px;
+	top:10px;
+	left:5px;
 	z-index:500;
 }
 
@@ -127,6 +127,14 @@ body {
 
 #slides .next {
 	left:743px;
+    background-image: url("/img/sprite.png");
+    background-position: -23px -26px;
+}
+
+#slides .prev {
+
+    background-image: url("/img/sprite.png");
+    background-position: 0 -26px;
 }
 
 /*
