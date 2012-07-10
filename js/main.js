@@ -29,6 +29,9 @@ $(function(){
 });
 
 $(document).ready(function() {
+
+
+
     total_raiting = 4.2; // итоговый ретинг
     id_arc = 55; // id статьи
     var star_widht = total_raiting*30 ;

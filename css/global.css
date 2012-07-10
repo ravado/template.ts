@@ -190,34 +190,3 @@ body {
 	border-top:1px solid #000;
 	text-shadow:none;
 }
-
-/*
-	Footer
-*//*
-
-#footer {
-	text-align:center;
-	width:580px;
-	margin-top:9px;
-	padding:4.5px 0 18px;
-	border-top:1px solid #dfdfdf;
-}
-
-#footer p {
-	margin:4.5px 0;
-	font-size:1.0em;
-}
-
-*//*
-	Anchors
-*//*
-
-a:link,a:visited {
-	color:#599100;
-	text-decoration:none;
-}
-
-a:hover,a:active {
-	color:#599100;
-	text-decoration:underline;
-}*/

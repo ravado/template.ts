@@ -1,22 +1,41 @@
-
-/* Разметка страници index*/
+// Заливка блоков белым цветом
 @fill_block_color: #ffffff;
+// Высота главного меню
 @menu_height: 45px;
+// Ширина сайдбара
 @sidebar_width: 175px;
+// Ширина страницы
 @page_width: 980px;
+
+// Высота заголовка превьюшки
 @game_item_head_heigth: 20px;
+// Высота всей превьюшки
 @game_item_height: 260px;
-@game_item_width: 180px;
-@game_item_description_height: 65px;
+// Ширина превьюшек
+@short_item_width: 180px;
+// Висота картинки в превью
+@short_img_height: 120px;
+// line-height у превьюшек игр
+@preview_line_height: 1.5em;
+// Количество строк описания для вывода
+@short_descr_lines: 4;
+// Высота блока с кратким описанием
+@short_descr_height: @preview_line_height;
+
+html, body {font-family: 'Play', sans-serif;}
+body { background-image: url("/img/bit-tile-blue.png"); }
+
 a {
     text-decoration: none;
     color:#1073AE;
-    border-bottom: 1px solid #1073AE;
+    border-bottom: 1px solid #c3e5fa;
     &:hover {
-        color: #66BDF1;
-        border-bottom: 1px solid #66BDF1;
+        color: #28a2eb;
+        border-bottom: 1px solid #e2f3fc;
     }
 }
+
+// Зеленый блок со скругленными углами
 .green-block {
     border-radius: 10px;
     border-width: 4px;
@@ -27,167 +46,10 @@ a {
     -webkit-border-image: url("/img/block-green.png") 4 repeat;
     -o-border-image: url("/img/block-green.png") 4 repeat;
 }
-.content-block {
-    margin: 10px auto;
-//    width: @page_width - @sidebar_width - 15px;
-}
-.center-block {
-    width: @page_width;
-    min-width: @page_width;
-    margin: 0 auto;
-}
 
-.clear-both {
-    clear: both;
-}
 
-html, body {margin:0;padding:0;width:100%;height:100%; font-family: 'Play', sans-serif;}
-#main-container {
-    position:relative;
-    min-height:100%;
-    height:auto !important;
-    height:100%;
-    color: #646464;
-    text-align: justify;
-}
-
-#main-container #header {
-    height: 230px;
-    width: 100%;
-    background-color: #00262f;
-
-}
-
-#header #wide-header {
-    background-image: url("/img/header.png");
-    background-repeat: no-repeat;
-    background-position: center bottom;
-    width: 100%;
-    height: 100%;
-    min-width: @page_width;
-
-}
-
-#header #fixed-header {
-    height: 100%;
-    .center-block;
-    color: #ffffff;
-
-}
-
-#fixed-header {
-    a {
-
-            border: none;
-
-    }
-    h1 {
-        -webkit-text-stroke: 1px black;
-        font-size: 60px;
-        font-weight: bold;
-        font-family: 'Russo One', sans-serif;
-        small {
-            -webkit-text-stroke: 1px white;
-            font-size: 14px;
-        }
-    }
-}
-
-#main-container #menu {
-    height: @menu_height;
-    background: #bcbcbc; /* Old browsers */
-    background: -moz-linear-gradient(top,  #bcbcbc 0%, #bababa 29%, #b4b4b4 43%, #b2b2b2 44%, #b1b1b1 47%, #a9a9a9 56%, #a3a3a3 72%, #a2a2a2 100%); /* FF3.6+ */
-    background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#bcbcbc), color-stop(29%,#bababa), color-stop(43%,#b4b4b4), color-stop(44%,#b2b2b2), color-stop(47%,#b1b1b1), color-stop(56%,#a9a9a9), color-stop(72%,#a3a3a3), color-stop(100%,#a2a2a2)); /* Chrome,Safari4+ */
-    background: -webkit-linear-gradient(top,  #bcbcbc 0%,#bababa 29%,#b4b4b4 43%,#b2b2b2 44%,#b1b1b1 47%,#a9a9a9 56%,#a3a3a3 72%,#a2a2a2 100%); /* Chrome10+,Safari5.1+ */
-    background: -o-linear-gradient(top,  #bcbcbc 0%,#bababa 29%,#b4b4b4 43%,#b2b2b2 44%,#b1b1b1 47%,#a9a9a9 56%,#a3a3a3 72%,#a2a2a2 100%); /* Opera 11.10+ */
-    background: -ms-linear-gradient(top,  #bcbcbc 0%,#bababa 29%,#b4b4b4 43%,#b2b2b2 44%,#b1b1b1 47%,#a9a9a9 56%,#a3a3a3 72%,#a2a2a2 100%); /* IE10+ */
-    background: linear-gradient(top,  #bcbcbc 0%,#bababa 29%,#b4b4b4 43%,#b2b2b2 44%,#b1b1b1 47%,#a9a9a9 56%,#a3a3a3 72%,#a2a2a2 100%); /* W3C */
-    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#bcbcbc', endColorstr='#a2a2a2',GradientType=0 ); /* IE6-9 */
-
-    border: 2px solid #000000;
-}
-
-#menu #fixed-menu {
-    .center-block;
-    height: 100%;
-    font-family: 'Russo One', sans-serif;
-    font-size: 18px;
-    color: #ffffff;
-}
-
-#main-container .empty {
-    height:100px;
-    float: left;
-    width: 100%;
-}
-
-#main-container #content {
-    width: 100%;
-    height: 100%;
-}
-
-.genre-menu {
-    margin: 0 auto;
-    width: @sidebar_width - 10px;
-}
-
-#sidebar-left {
-    width: @sidebar_width;
-    float: left;
-
-}
-
-body {
-    background-image: url("/img/bit-tile-blue.png");
-}
-
-#content #fixed-content {
-    .center-block;
-    height: 100%;
-
-}
-
-#footer {
-    position:relative;
-    margin-top:-100px;
-    height:100px;
-    clear: both;
-    float: left;
-    width:100%;
-    background-image: url("/img/footer.png");
-}
-
-#fixed-footer {
-    color: #ffffff;
-    text-align: center;
-    padding: 10px;
-    p {
-        font-weight: bold;
-        padding-top: 40px;
-    }
-}
-
-#main-content {
-    padding: 0 0 0 10px;
-    float: left;
-    width: @page_width - @sidebar_width - 10px;
-}
-
-.bit-button {
-    border-width: 4px;
-    border-image-source: url("/img/button-green-2.png");
-    border-image-slice: 4 fill;
-    -moz-border-image: url("/img/button-green-2.png") 4 repeat;
-    -webkit-border-image: url("/img/button-green-2.png") 4 repeat;
-    -o-border-image: url("/img/button-green-2.png") 4 repeat;
-    border-radius: 15px;
-
-    padding: 5px;
-    display: inline-block;
-    color: #ffffff;
-}
-
-.block-head-blue {
+// Синий блок с закруглением вверху только
+.blue-head-block {
     font-family: 'Press Start 2P';
     font-size: 10px;
     border-width: 4px;
@@ -199,10 +61,153 @@ body {
     padding: 5px;
     line-height: 1.3em;
     border-radius: 15px;
-
     color: #ffffff;
 }
 
+
+// Белый блок
+.white-block {
+    border-radius: 10px;
+    border-width: 4px;
+    border-image-source: url("/img/block-white.png");
+    border-image-slice: 4 fill;
+    border-width: 4px;
+    -moz-border-image: url("/img/block-white.png") 4 repeat;
+    -webkit-border-image: url("/img/block-white.png") 4 repeat;
+    -o-border-image: url("/img/block-white.png") 4 repeat;
+}
+
+.center-block {
+    width: @page_width;
+    min-width: @page_width;
+    margin: 0 auto;
+}
+
+.clear-both {
+    clear: both;
+}
+
+// Главный контейнер в котором находится все
+#main-container {
+    position:relative;
+    min-height:100%;
+    height:auto !important;
+    height:100%;
+    color: #646464;
+    text-align: justify;
+    .empty {
+        height:100px;
+        float: left;
+        width: 100%;
+    }
+}
+
+// Хедер
+#header {
+    height: 230px;
+    width: 100%;
+    background-color: #00262f;
+
+}
+
+// Внутренний хедер для задания картинки на фон
+#wide-header {
+    background-image: url("/img/header.png");
+    background-repeat: no-repeat;
+    background-position: center bottom;
+    width: 100%;
+    height: 100%;
+    min-width: @page_width;
+
+}
+
+// Ограниченый размерами хедер
+#fixed-header {
+    height: 100%;
+    .center-block;
+    color: #ffffff;
+    a { border: none; }
+
+}
+
+// Блок с главным меню
+#menu {
+    height: @menu_height;
+    background: #bcbcbc; /* Old browsers */
+    background: -moz-linear-gradient(top,  #bcbcbc 0%, #bababa 29%, #b4b4b4 43%, #b2b2b2 44%, #b1b1b1 47%, #a9a9a9 56%, #a3a3a3 72%, #a2a2a2 100%); /* FF3.6+ */
+    background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#bcbcbc), color-stop(29%,#bababa), color-stop(43%,#b4b4b4), color-stop(44%,#b2b2b2), color-stop(47%,#b1b1b1), color-stop(56%,#a9a9a9), color-stop(72%,#a3a3a3), color-stop(100%,#a2a2a2)); /* Chrome,Safari4+ */
+    background: -webkit-linear-gradient(top,  #bcbcbc 0%,#bababa 29%,#b4b4b4 43%,#b2b2b2 44%,#b1b1b1 47%,#a9a9a9 56%,#a3a3a3 72%,#a2a2a2 100%); /* Chrome10+,Safari5.1+ */
+    background: -o-linear-gradient(top,  #bcbcbc 0%,#bababa 29%,#b4b4b4 43%,#b2b2b2 44%,#b1b1b1 47%,#a9a9a9 56%,#a3a3a3 72%,#a2a2a2 100%); /* Opera 11.10+ */
+    background: -ms-linear-gradient(top,  #bcbcbc 0%,#bababa 29%,#b4b4b4 43%,#b2b2b2 44%,#b1b1b1 47%,#a9a9a9 56%,#a3a3a3 72%,#a2a2a2 100%); /* IE10+ */
+    background: linear-gradient(top,  #bcbcbc 0%,#bababa 29%,#b4b4b4 43%,#b2b2b2 44%,#b1b1b1 47%,#a9a9a9 56%,#a3a3a3 72%,#a2a2a2 100%); /* W3C */
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#bcbcbc', endColorstr='#a2a2a2',GradientType=0 ); /* IE6-9 */
+    border: 2px solid #000000;
+}
+
+// Фиксированая часть меню
+#fixed-menu {
+    .center-block;
+    height: 100%;
+    font-family: 'Russo One', sans-serif;
+    font-size: 18px;
+    color: #ffffff;
+}
+
+
+// Средняя часть сайта (контент фиксированого размера)
+#fixed-content {
+    .center-block;
+    height: 100%;
+
+}
+
+
+/*   ===   Сайдбар   ===   */
+// Левый сайдбар
+#sidebar-left {
+    width: @sidebar_width;
+    float: left;
+
+}
+
+// Боковое меню с жанрами
+.genre-menu {
+    width: @sidebar_width - 10px;
+}
+
+
+/*   ===   Подвал сайта   ===   */
+// Футер
+#footer {
+    position:relative;
+    margin-top:-100px;
+    height:100px;
+    clear: both;
+    float: left;
+    width:100%;
+    background-image: url("/img/footer.png");
+}
+
+// Фиксированая часть футера
+#fixed-footer {
+    color: #ffffff;
+    text-align: center;
+    padding: 10px;
+    p {
+        font-weight: bold;
+        padding-top: 40px;
+    }
+}
+
+// Блок с непосредственным контентом
+#main-content {
+    padding: 0 0 0 10px;
+    float: left;
+    width: @page_width - @sidebar_width - 10px;
+}
+
+
+// Блок с контентом без заголовка
 .block-content {
     margin-top: -2px;
     padding: 5px;
@@ -212,23 +217,12 @@ body {
 
 }
 
+// Весь блок с контентом и заголовком
 .complete-block {
-    margin-top: 10px;
-    margin-bottom: 10px;
+    margin: 10px 0 10px 0;
 
 }
-.top-games {
-//    .content-block;
-}
 
-.popular-games {
-//    .content-block;
-}
-
-.random-games {
-//    .content-block;
-//    width:
-}
 
 /* ======================================== Главное меню ============================================================ */
 #main-menu {
@@ -239,7 +233,30 @@ body {
         left:-9999px; /* Скрываем за экраном, когда не нужно (данный метод лучше, чем display:none;) */
         opacity:0; /* Устанавливаем начальное состояние прозрачности */
         z-index: 1;
-
+        padding-top:10px;
+        &:before{
+            content: "";
+            position: absolute;
+            z-index: 1000;
+            top: 2px;
+            left: 20%;
+            border-bottom: 8px solid #000;
+            border-left: 8px solid transparent;
+            border-right: 8px solid transparent;
+            border-top: 0;
+            border-top-color: #000;
+        }
+        &:after {
+            content: "";
+            position: absolute;
+            z-index: 1000;
+            top: 4px;
+            left: 20%;
+            border-bottom: 8px solid #fff;
+            border-left: 8px solid transparent;
+            border-right: 8px solid transparent;
+            border-top: 0;
+        }
         li{
             padding-top:1px; /* Вводим отступ между li чтобы создать иллюзию разделенных пунктов меню */
             float:none;
@@ -324,10 +341,6 @@ body {
             color: #ffffff;
             display: block;
             padding: 10px 0 0 0;
-            /*&:hover{
-                color: #fc9000;
-                text-shadow: 0px 0px 6px rgba(252,255,255,1);
-            }*/
         }
         &:hover {
             border-bottom: 5px solid #333;
@@ -365,56 +378,46 @@ body {
 .search-bar {
     float: right;
     height: @menu_height;
-}
-
-.search-bar fieldset {
-    margin-top: 7px;
-//    margin-right: 7px;
-    height: 25px;
-    width: 155px;
-    border-radius: 10px;
-    border-width: 4px;
-    border-image-source: url("/img/block-white.png");
-    border-image-slice: 4 fill;
-    border-width: 4px;
-    -moz-border-image: url("/img/block-white.png") 4 repeat;
-    -webkit-border-image: url("/img/block-white.png") 4 repeat;
-    -o-border-image: url("/img/block-white.png") 4 repeat;
-}
-
-.search-bar input {
-    border: 0;
-    padding: 0 !important;
-    margin: 0 !important;
-    height: 25px;
-    font-size: 14px;
-}
-
-.search-bar .search-input{
-    width: 120px;
-    padding: 0 0 0 5px ;
-}
-
-.search-bar .btn-search {
-    width: 25px;
-    background-color: #ffffff;
-    background: url("/img/sprite.png") no-repeat;
-    text-indent: -9999px;
-    background-position: 3px 1px;
-
-    &:hover {
-        opacity: 0.7;
-        cursor: pointer;
+    fieldset {
+        margin-top: 7px;
+        height: 25px;
+        width: 155px;
+        .white-block;
     }
-
-    &:active {
+    input {
+        border: 0;
+        padding: 0 !important;
+        margin: 0 !important;
+        height: 25px;
+        font-size: 14px;
+    }
+    .search-input{
+        width: 120px;
+        padding: 0 0 0 5px ;
+    }
+    .btn-search {
+        width: 25px;
+        background-color: #ffffff;
         background: url("/img/sprite.png") no-repeat;
-        background-position: -65px 4px;
+        text-indent: -9999px;
+        background-position: 3px 1px;
+
+        &:hover {
+            opacity: 0.7;
+            cursor: pointer;
+        }
+
+        &:active {
+            background: url("/img/sprite.png") no-repeat;
+            background-position: -65px 4px;
+        }
     }
 }
 /* ----------------------------------- Форма поиска в главном меню -------------------------------------------------- */
+
+
 .game-item {
-    width: @game_item_width;
+    width: @short_item_width;
     height: @game_item_height;
     border-radius: 10px 10px 0 0;
     opacity: 0.9;
@@ -467,22 +470,26 @@ body {
     height: @game_item_height - @game_item_head_heigth - 10px;
     margin-top: -2px;
     border: 2px solid #482400;
+
 }
 
 .item-image {
-    max-width: @game_item_width;
-    height: 120px;
+    max-width: @short_item_width;
+    height: @short_img_height;
     overflow: hidden;
 }
 
+// Блок с коротким превью игры
 .item-decription {
-    height: @game_item_description_height;
     line-height: 1.5em;
-    width: @game_item_width - (4 * 2) - 5px;
-    overflow: hidden;
-    text-overflow: ellipsis;
     font-size: 10px;
     padding: 10px 5px;
+    height: @game_item_height - @game_item_head_heigth - @short_img_height - 55px;
+    p {
+        overflow: hidden;
+        text-overflow: ellipsis;
+        height: @short_descr_height * @short_descr_lines;
+    }
 }
 
 .item-genre {
@@ -630,15 +637,7 @@ body {
 
 #game-info {
     padding-top: 10px;
-    a {
-        text-decoration: none;
-        border-bottom: 1px solid #1073AE;
-        color: #1073AE;
-        &:hover {
-            color: #66BDF1;
-            border-bottom: 1px solid #66BDF1;
-        }
-    }
+
 }
 #game-review {
     margin-top: 20px;
